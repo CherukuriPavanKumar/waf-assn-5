@@ -1,0 +1,22 @@
+{
+  "name": "assn-5-node-react-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Assignment 5 NodeJS, ExpressJS, and ReactJS examples",
+  "scripts": {
+    "q3": "node question3/server.js",
+    "q4": "node question4/server.js",
+    "q5": "node question5/server.js",
+    "q6": "node question6/server.js",
+    "q7": "node question7/server.js",
+    "q8": "node question8/server.js",
+    "q9": "node question9/server.js",
+    "q10": "node question10/server.js",
+    "q14": "node question14/server.js",
+    "q17": "node question17/server.js",
+    "q18": "node question18/server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

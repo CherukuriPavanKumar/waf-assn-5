@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Q16 Course Registration</title><script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script><script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script><script src="https://unpkg.com/@babel/standalone/babel.min.js"></script></head>
+<body><div id="root"></div><script type="text/babel">
+const CourseContext = React.createContext(null);
+const courses = ['Web Application Frameworks', 'Database Systems', 'Cloud Computing'];
+function CourseProvider({ children }) { const [selected, setSelected] = React.useState([]); function toggle(course) { setSelected(selected.includes(course) ? selected.filter((item) => item !== course) : [...selected, course]); } return <CourseContext.Provider value={{ selected, toggle }}>{children}</CourseContext.Provider>; }
+function CourseList() { const { selected, toggle } = React.useContext(CourseContext); return <section><h2>Available Courses</h2>{courses.map((course) => <label key={course}><input type="checkbox" checked={selected.includes(course)} onChange={() => toggle(course)} /> {course}</label>)}</section>; }
+function SelectedCourses() { const { selected } = React.useContext(CourseContext); return <section><h2>Selected Courses</h2><ul>{selected.map((course) => <li key={course}>{course}</li>)}</ul></section>; }
+function App() { return <CourseProvider><main><h1>Course Registration</h1><CourseList /><SelectedCourses /></main></CourseProvider>; }
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script></body></html>

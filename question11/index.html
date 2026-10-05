@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Q11 Student Component</title><script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script><script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script><script src="https://unpkg.com/@babel/standalone/babel.min.js"></script></head>
+<body><div id="root"></div><script type="text/babel">
+function Student({ name, branch, semester }) {
+  return <article><h2>{name}</h2><p>Branch: {branch}</p><p>Semester: {semester}</p></article>;
+}
+function App() { return <main><h1>Student Details</h1><Student name="Aarav" branch="Computer Science" semester="4" /><Student name="Diya" branch="Electronics" semester="6" /></main>; }
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script></body></html>

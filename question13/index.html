@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Q13 Products</title><script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script><script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script><script src="https://unpkg.com/@babel/standalone/babel.min.js"></script></head>
+<body><div id="root"></div><script type="text/babel">
+function App() {
+  const [products, setProducts] = React.useState(['Notebook', 'Pen']);
+  const [message, setMessage] = React.useState('Product list loaded.');
+  React.useEffect(() => { setMessage(`Product list modified: ${products.length} item(s).`); }, [products]);
+  function addProduct() { setProducts([...products, `Product ${products.length + 1}`]); }
+  return <main><h1>Products</h1><button onClick={addProduct}>Add product</button><p>{message}</p><ul>{products.map((product) => <li key={product}>{product}</li>)}</ul></main>;
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script></body></html>
